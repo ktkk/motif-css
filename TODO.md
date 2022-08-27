@@ -2,19 +2,18 @@
 
 - button
 	+ ~~active~~
-	+ focus
+	+ ~~focus~~
 	+ focus-visible
 	+ disabled
 - menu bar
 - window
-	+ frame
+	+ ~~frame~~
 	+ body
-	+ title bar
-		* text
-		* controls
+	+ ~~title bar~~
+		* ~~text~~
+		* ~~controls~~
 - checkbox
 - radio button
-- frame
 - text box
 - sliders
 - scroll bar
