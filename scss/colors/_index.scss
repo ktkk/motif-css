@@ -1,0 +1,20 @@
+@use "blue" as bl;
+@use "beige" as be;
+
+// Text
+$text-primary: #ffffff;
+$text-dark: #000000;
+
+// Window
+$surface-focus: be.$surface;
+$highlight-focus: be.$highlight;
+$shadow-focus: be.$shadow;
+
+$surface-unfocus: bl.$surface;
+$highlight-unfocus: bl.$highlight;
+$shadow-unfocus: bl.$shadow;
+
+// Content
+$surface: bl.$surface;
+$highlight: bl.$highlight;
+$shadow: bl.$shadow;

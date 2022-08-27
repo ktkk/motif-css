@@ -1,0 +1,115 @@
+@font-face {
+  font-family: "Motif";
+  src: url("../fonts/motif/motif.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+.window button {
+  font-family: Motif;
+  color: #ffffff;
+  justify-content: center;
+  border: none;
+  box-shadow: inset 1px 1px #bdc7ce, inset -1px -1px #364149;
+  background: #6c8293;
+}
+.window button:not(.titlebar-menu, .titlebar-minimize, .titlebar-maximize) {
+  padding: 3px;
+}
+.window button:active {
+  box-shadow: inset 1px 1px #364149, inset -1px -1px #bdc7ce;
+}
+.window button:active:not(.titlebar-menu, .titlebar-minimize, .titlebar-maximize):focus {
+  box-shadow: inset 1px 1px #364149, inset -1px -1px #bdc7ce, 3px 3px #bdc7ce, 3px -2px #bdc7ce, -2px 3px #bdc7ce, -3px -3px #364149, -3px 3px #364149, 3px -3px #364149;
+}
+.window button:focus:not(.titlebar-menu, .titlebar-minimize, .titlebar-maximize) {
+  outline: solid 2px #6c8293;
+  box-shadow: inset 1px 1px #bdc7ce, inset -1px -1px #364149, 3px 3px #bdc7ce, 3px -2px #bdc7ce, -2px 3px #bdc7ce, -3px -3px #364149, -3px 3px #364149, 3px -3px #364149;
+}
+
+.window {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: inset 1px 1px #bdc7ce, inset -1px -1px #364149, inset 2px 2px #bdc7ce, inset -2px -2px #364149, inset 4px 4px #6c8293, inset -4px -4px #6c8293, inset 5px 5px #364149, inset -5px -5px #bdc7ce;
+  padding: 5px;
+}
+.window::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../icons/window-corner-top-left.png") left top no-repeat, url("../icons/window-corner-top-right.png") right top no-repeat, url("../icons/window-corner-bottom-left.png") bottom left no-repeat, url("../icons/window-corner-bottom-right.png") bottom right no-repeat;
+}
+.window .window-section {
+  font-family: Motif;
+  color: #ffffff;
+  box-shadow: inset 1px 1px #bdc7ce, inset -1px -1px #364149;
+  background: #6c8293;
+  padding: 3px;
+}
+.window .titlebar {
+  display: flex;
+  flex-direction: row;
+  cursor: move;
+}
+.window .titlebar > .titlebar-menu {
+  width: 19px;
+  height: 19px;
+  background-image: url("../icons/menu.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  image-rendering: pixelated;
+}
+.window .titlebar > .titlebar-minimize {
+  width: 19px;
+  height: 19px;
+  background-image: url("../icons/minimize.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  image-rendering: pixelated;
+}
+.window .titlebar > .titlebar-maximize {
+  width: 19px;
+  height: 19px;
+  background-image: url("../icons/maximize.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  image-rendering: pixelated;
+}
+.window .titlebar > .titlebar-title {
+  box-shadow: inset 1px 1px #bdc7ce, inset -1px -1px #364149;
+  background: #6c8293;
+  flex-grow: 1;
+  overflow: hidden;
+  height: 19px;
+  font-family: Motif;
+  color: #ffffff;
+  text-align: center;
+}
+.window.focus .titlebar > .titlebar-title {
+  background: #cec2bb;
+}
+
+.window.focus .titlebar > .titlebar-title {
+  color: #000000;
+}
+
+.window .titlebar > .titlebar-title > p {
+  margin-top: 2px;
+  margin-right: 0;
+  user-select: none;
+}
+.window .menubar {
+  box-shadow: inset 1px 1px #bdc7ce, inset -1px -1px #364149, inset 2px 2px #bdc7ce, inset -2px -2px #364149;
+  background: #6c8293;
+  height: 31px;
+}
+
+body {
+  font-family: Motif;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,136 @@
+@use "../colors";
+
+$border-window-outer:
+	inset 1px 1px colors.$highlight,
+	inset -1px -1px colors.$shadow,
+	inset 2px 2px colors.$highlight,
+	inset -2px -2px colors.$shadow,
+	inset 4px 4px colors.$surface,
+	inset -4px -4px colors.$surface,
+	inset 5px 5px colors.$shadow,
+	inset -5px -5px colors.$highlight;
+$border-section-outer:
+	inset 1px 1px colors.$highlight,
+	inset -1px -1px colors.$shadow;
+$border-menu-outer:
+	inset 1px 1px colors.$highlight,
+	inset -1px -1px colors.$shadow,
+	inset 2px 2px colors.$highlight,
+	inset -2px -2px colors.$shadow;
+//$border-window-inner-top-left:
+//	inset 1px
+
+.window {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	&::after {
+		content: "";
+		pointer-events: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background:
+			url("../icons/window-corner-top-left.png") left top no-repeat,
+			url("../icons/window-corner-top-right.png") right top no-repeat,
+			url("../icons/window-corner-bottom-left.png") bottom left no-repeat,
+			url("../icons/window-corner-bottom-right.png") bottom right no-repeat;
+	}
+
+	box-shadow:
+		$border-window-outer;
+
+	//background: colors.$surface-unfocus;
+	//&.focus {
+	//	background: colors.$surface-focus;
+	//}
+	padding: 5px;
+
+	.window-section {
+		font-family: Motif;
+		color: colors.$text-primary;
+
+		box-shadow:
+			$border-section-outer;
+		background: colors.$surface;
+		padding: 3px;
+	}
+
+	.titlebar {
+		display: flex;
+		flex-direction: row;
+
+		cursor: move;
+
+		> .titlebar-menu {
+			width: 19px;
+			height: 19px;
+
+			background-image: url("../icons/menu.png");
+			background-repeat: no-repeat;
+			background-position: center center;
+			image-rendering: pixelated;
+		}
+
+		> .titlebar-minimize {
+			width: 19px;
+			height: 19px;
+
+			background-image: url("../icons/minimize.png");
+			background-repeat: no-repeat;
+			background-position: center center;
+			image-rendering: pixelated;
+		}
+
+		> .titlebar-maximize {
+			width: 19px;
+			height: 19px;
+
+			background-image: url("../icons/maximize.png");
+			background-repeat: no-repeat;
+			background-position: center center;
+			image-rendering: pixelated;
+		}
+
+		> .titlebar-title {
+			box-shadow:
+				$border-section-outer;
+
+			background: colors.$surface;
+			@at-root .window.focus .titlebar > .titlebar-title {
+				background: colors.$surface-focus;
+			}
+
+			flex-grow: 1;
+			overflow: hidden;
+
+			height: 19px;
+
+			font-family: Motif;
+			color: colors.$text-primary;
+
+			@at-root .window.focus .titlebar > .titlebar-title {
+				color: colors.$text-dark;
+			}
+			text-align: center;
+
+			> p {
+				margin-top: 2px;
+				margin-right: 0;
+
+				user-select: none;
+			}
+		}
+	}
+
+	.menubar {
+		box-shadow:
+			$border-menu-outer;
+		background: colors.$surface;
+
+		height: 31px;
+	}
+}

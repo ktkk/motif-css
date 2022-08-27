@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>motif.css example</title>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+
+	<body>
+		<style>
+			body {
+				background: url("bg_dither.png");
+				image-rendering: pixelated;
+			}
+
+			#button-section {
+				padding: 15px;
+
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			#message-section {
+				padding: 15px;
+			}
+		</style>
+		<div id="quit-popup" class="window" style="margin: 32px; width: 300px">
+			<div class="titlebar">
+				<button width="19px" class="titlebar-menu"></button>
+				<div class="titlebar-title">
+					<p>dialog</p>
+				</div>
+				<button class="titlebar-minimize"></button>
+				<button class="titlebar-maximize"></button>
+			</div>
+			<div class="window-body">
+				<div class="menubar"></div>
+				<div id="message-section" class="window-section">
+					Are you sure you want to quit?
+				</div>
+				<div id="button-section" class="window-section">
+					<button id="cancel-button" style="width: 50px; height: 22px">
+						Cancel
+					</button>
+					<button id="ok-button" style="width: 50px; height: 22px" autofocus>
+						OK
+					</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

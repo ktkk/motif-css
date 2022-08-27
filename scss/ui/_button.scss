@@ -1,0 +1,62 @@
+@use "../colors";
+
+$border-button:
+	inset 1px 1px colors.$highlight,
+	inset -1px -1px colors.$shadow;
+$border-button-sunken:
+	inset 1px 1px colors.$shadow,
+	inset -1px -1px colors.$highlight;
+$border-button-outer:
+	inset 1px 1px colors.$highlight,
+	inset -1px -1px colors.$shadow,
+	// Highlight outer
+	3px 3px colors.$highlight,
+	3px -2px colors.$highlight,
+	-2px 3px colors.$highlight,
+	// Shadow outer
+	-3px -3px colors.$shadow,
+	-3px 3px colors.$shadow,
+	3px -3px colors.$shadow;
+$border-button-outer-sunken:
+	inset 1px 1px colors.$shadow,
+	inset -1px -1px colors.$highlight,
+	// Highlight outer
+	3px 3px colors.$highlight,
+	3px -2px colors.$highlight,
+	-2px 3px colors.$highlight,
+	// Shadow outer
+	-3px -3px colors.$shadow,
+	-3px 3px colors.$shadow,
+	3px -3px colors.$shadow;
+
+.window button {
+	font-family: Motif;
+	color: colors.$text-primary;
+	justify-content: center;
+
+	border: none;
+
+	box-shadow: $border-button;
+	background: colors.$surface;
+
+	&:not(.titlebar-menu, .titlebar-minimize, .titlebar-maximize) {
+		padding: 3px;
+	}
+
+	&:active {
+		box-shadow: $border-button-sunken;
+
+		&:not(.titlebar-menu, .titlebar-minimize, .titlebar-maximize) {
+			&:focus {
+				box-shadow: $border-button-outer-sunken;
+			}
+		}
+	}
+
+	&:focus {
+		&:not(.titlebar-menu, .titlebar-minimize, .titlebar-maximize) {
+			outline: solid 2px colors.$surface;
+			box-shadow: $border-button-outer;
+		}
+	}
+}
