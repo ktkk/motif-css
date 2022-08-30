@@ -9,6 +9,9 @@ $border-window-outer:
 	inset -4px -4px colors.$surface,
 	inset 5px 5px colors.$shadow,
 	inset -5px -5px colors.$highlight;
+$border-titlebar-title-sunken:
+	inset 1px 1px colors.$shadow,
+	inset -1px -1px colors.$highlight;
 $border-section-outer:
 	inset 1px 1px colors.$highlight,
 	inset -1px -1px colors.$shadow;
@@ -63,6 +66,8 @@ $border-menu-outer:
 		display: flex;
 		flex-direction: row;
 
+		background: colors.$surface;
+
 		cursor: move;
 
 		> .titlebar-menu {
@@ -99,10 +104,14 @@ $border-menu-outer:
 			box-shadow:
 				$border-section-outer;
 
-			background: colors.$surface;
-			@at-root .window.focus .titlebar > .titlebar-title {
-				background: colors.$surface-focus;
+			&:active {
+				box-shadow: $border-titlebar-title-sunken;
 			}
+
+			//background: colors.$surface;
+			//@at-root .window.focus .titlebar > .titlebar-title {
+			//	background: colors.$surface-focus;
+			//}
 
 			flex-grow: 1;
 			overflow: hidden;
@@ -112,9 +121,9 @@ $border-menu-outer:
 			font-family: Motif;
 			color: colors.$text-primary;
 
-			@at-root .window.focus .titlebar > .titlebar-title {
-				color: colors.$text-dark;
-			}
+			//@at-root .window.focus .titlebar > .titlebar-title {
+			//	color: colors.$text-dark;
+			//}
 			text-align: center;
 
 			> p {

@@ -11,6 +11,7 @@ A CSS (SASS) recreation of the motif widget system.
 Prerequisites:
 - typescript
 - sass (a recent version)
+- python3
 
 This project uses Gnu Make as its build system, since it's easy to set up and doesn't need any javascript bloat.
 
@@ -19,7 +20,7 @@ make
 ```
 
 An example is provided by means of [index.html](./index.html).
-To run a local instance, invoke the Make rule `run` (needs python3).
+To run a local instance, invoke the Make rule `run`.
 
 ```sh
 make run
