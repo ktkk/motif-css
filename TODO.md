@@ -18,4 +18,4 @@
 - sliders
 - scroll bar
 - dropdown
-
+- fix font
