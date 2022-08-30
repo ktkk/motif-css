@@ -11,8 +11,8 @@ styles:
 
 static-files:
 	@mkdir -p css/
-	cp -r fonts/ $(STYLES_OUT_DIR)/fonts/
-	cp -r icons/ $(STYLES_OUT_DIR)/icons/
+	cp -r fonts/ $(STYLES_OUT_DIR)/
+	cp -r icons/ $(STYLES_OUT_DIR)/
 
 .PHONY: clean run
 
