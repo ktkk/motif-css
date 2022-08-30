@@ -1,6 +1,24 @@
 SASS=sass
 
-all: styles
+STYLES_DIR=scss
+
+STYLES_OUT_DIR=css
+
+all: styles static-files
 
 styles:
-	$(SASS) scss/style.scss css/style.css
+	$(SASS) $(STYLES_DIR)/style.scss $(STYLES_OUT_DIR)/style.css
+
+static-files:
+	@mkdir -p css/
+	cp -r fonts/ $(STYLES_OUT_DIR)/fonts/
+	cp -r icons/ $(STYLES_OUT_DIR)/icons/
+
+.PHONY: clean run
+
+clean:
+	rm -rf \
+		$(STYLES_OUT_DIR)
+
+run: all
+	./run.py
