@@ -9,7 +9,6 @@ A CSS (SASS) recreation of the motif widget system.
 ## Build
 
 Prerequisites:
-- typescript
 - sass (a recent version)
 - python3
 
